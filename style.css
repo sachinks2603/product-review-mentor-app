@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    --Green-color-500: hsl(158, 36%, 37%);
+    --Green-color-700: hsl(158, 42%, 18%);
+
+    --Black-color: hsl(212, 21%, 14%);
+    --Grey-color: hsl(228, 12%, 48%);
+    --Cream-color: hsl(30, 38%, 92%);
+    --White-color: hsl(0, 0%, 100%);
+}
+
+html{
+    font-family: "Montserrat", sans-serif;
+    font-size: calc((16px / 100) * 62.5);
+}
+
+
+main{
+    background: var(--Cream-color);
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+main .product-image{
+    width: 22%;
+    height: 55%;
+}
+
+main .product-image img{
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    width: 100%;
+    height: 100%;
+    filter: brightness(.95);
+}
+
+main .product-content{
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    background: var(--White-color);
+    width: 22%;
+    height: 55%;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+}
+
+main .product-content p{
+    font-size: 1.1rem;
+    color: var(--Grey-color);
+    font-weight: 500;
+    letter-spacing: .5rem;
+    text-transform: uppercase;
+}
+
+main .product-content h1{
+    font-family: "Fraunces", serif;
+    font-weight: 700;
+    font-size: 2.8rem;
+    line-height: 100%;
+    letter-spacing: .1rem;
+    padding-top: 1.8rem;
+    padding-bottom: 1.8rem;
+}
+
+main .product-content .product-desc{
+    letter-spacing: normal;
+    text-transform: none;
+    line-height: 150%;
+    font-size: 1.3rem;
+    margin-top: 1rem;
+    margin-bottom: 2.2rem;
+}
+
+main .product-content .price{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+main .product-content .price > p{   
+    font-family: "Fraunces", serif;
+}
+
+main .product-content .price > p:nth-child(1){
+    letter-spacing: .15rem;
+    color: var(--Green-color-500);
+    font-weight: 700;
+    font-size: 2.8rem;
+}
+
+main .product-content .price > p:nth-child(2){
+    letter-spacing: .15rem;
+    text-decoration-line: line-through;
+    font-weight: 500;
+}
+
+main .product-content .btn{
+    width: 100%;
+    height: 12%;
+    border-radius: .7rem;
+    background: var(--Green-color-500);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2.2rem;
+}
+
+main .product-content .btn button{
+    background: transparent;
+    font-weight: 700;
+    border: none;
+    font-size: 1.2rem;
+    color: var(--White-color);
+}
+
+main .product-content .btn:hover{
+    background: var(--Green-color-700);
+    cursor: pointer;
+}
+
+/* footer style */
+footer .attribution { 
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+    right: 0;
+    font-size: 1.1rem; 
+    text-align: center; 
+}
+
+footer .attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+/* @breakpoint */
+
+@media (max-width: 1100px){
+    main .product-image{
+        width: 30%;
+        height: 55%;
+    }
+    main .product-content{
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        background: var(--White-color);
+        width: 30%;
+        height: 55%;
+    }
+}
+
+@media (max-width: 840px){
+    main .product-image{
+        width: 40%;
+        height: 55%;
+    }
+    main .product-content{
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        background: var(--White-color);
+        width: 40%;
+        height: 55%;
+    }
+}
+
+@media (min-width: 425px) and (max-width: 640px){
+    html{
+        font-size: 50%;
+    }
+    main .product-image{
+        width: 45%;
+        height: 48%;
+    }
+    main .product-content{
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        background: var(--White-color);
+        width: 45%;
+        height: 48%;
+    }
+}
+
+@media (min-width: 280px) and (max-width: 425px){
+    html{
+        font-size: 62.5%;
+    }
+    main{
+        flex-direction: column;
+        padding-top: 3rem;
+        justify-content: flex-start;
+    }
+    main .product-image{
+        width: 94%;
+        height: 45%;
+    }
+
+    main .product-image img{
+        border-top-right-radius: 1rem;
+        border-bottom-left-radius: 0;
+        object-fit: cover;
+    }
+
+    main .product-content{
+        border-bottom-left-radius: 1rem;
+        border-top-right-radius: 0;
+        width: 94%;
+        height: 52%;
+        padding-bottom: 2rem;
+    }
+
+    main .product-content .btn{
+        height: 15%;
+    }
+
+    footer .attribution { 
+        bottom: .5rem;
+        font-size: .8rem;
+    }
+}
